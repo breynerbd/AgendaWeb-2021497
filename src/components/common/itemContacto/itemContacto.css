@@ -1,0 +1,9 @@
+.item-contacto {
+    border: 1pc solid white;
+    border-radius: 1rem;
+
+    width: 100%;
+    display: grid;
+    grid-template-columns: 1fr 2fr 1fr;
+    gap: 1rem;
+}

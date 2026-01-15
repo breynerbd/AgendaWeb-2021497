@@ -1,0 +1,43 @@
+/* Contenedor principal del botón */
+div {
+    width: 140px;
+    height: 140px;
+    background-color: #ffffff;
+    border-radius: 15px;
+    box-shadow: 0 6px 15px rgba(0, 0, 0, 0.15);
+
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 10px;
+
+    cursor: pointer;
+    transition: transform 0.2s, box-shadow 0.2s;
+}
+
+/* Efecto hover */
+div:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 10px 25px rgba(0, 0, 0, 0.25);
+}
+
+/* Contenedor de la imagen */
+.button-image {
+    width: 60px;
+    height: 60px;
+}
+
+.button-image img {
+    width: 100%;
+    height: 100%;
+    object-fit: contain;
+}
+
+/* Texto del botón */
+.button-text {
+    font-size: 14px;
+    font-weight: 600;
+    color: #333;
+    text-align: center;
+}
