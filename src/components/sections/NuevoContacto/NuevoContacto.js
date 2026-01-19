@@ -47,9 +47,10 @@ let NuevoContacto = () => {
         };
         console.log(contacto);
         ContactList.push(contacto);
+
+        inputNombre.value = "";
+        inputTelefono.value = "";
     });
-
-
 
     return sectionNuevoContacto;
 };
