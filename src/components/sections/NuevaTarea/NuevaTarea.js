@@ -1,5 +1,5 @@
-import { TaskList } from "../Tareas/dbTareas.js";
 import { Tareas } from "../Tareas/Tareas.js";
+import { getTasksFromStorage, saveTasksToStorage } from "../../common/storage.js";
 
 let NuevaTarea = () => {
     let sectionNuevaTarea = document.createElement("section");
@@ -35,12 +35,15 @@ let NuevaTarea = () => {
 
     form.addEventListener("submit", (e) => {
         e.preventDefault();
-        let tarea = {
+
+        const tarea = {
             titulo: inputTitulo.value,
             prioridad: inputPrioridad.value
         };
-        console.log(tarea);
-        TaskList.push(tarea);
+
+        const tareas = getTasksFromStorage();
+        tareas.push(tarea);
+        saveTasksToStorage(tareas);
 
         inputTitulo.value = "";
         inputPrioridad.value = "";

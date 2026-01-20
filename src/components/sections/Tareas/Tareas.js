@@ -1,5 +1,5 @@
 import { ItemTarea } from "../../common/itemTarea/ItemTarea.js";
-import { TaskList } from "./dbTareas.js";
+import { getTasksFromStorage } from "../../common/storage.js";
 
 let Tareas = () => {
     let sectionTareas = document.createElement("section");
@@ -9,9 +9,11 @@ let Tareas = () => {
     h2.textContent = "Tareas";
     sectionTareas.appendChild(h2);
 
-    TaskList.forEach((task) => {
-        sectionTareas.appendChild(
-            ItemTarea("check.svg", task.titulo, task.prioridad)
+    const tareas = getTasksFromStorage();
+
+    tareas.forEach((task) => {
+        sectionTareas.appendChild(ItemTarea("check.svg", 
+            task.titulo, task.prioridad)
         );
     });
 

@@ -8,13 +8,17 @@ let login = function () {
     let user = document.createElement("input");
     user.type = "text";
     user.placeholder = "Usuario";
-    
+
     let password = document.createElement("input");
     password.type = "password";
     password.placeholder = "Password";
 
     let button = document.createElement("button");
     button.innerHTML = "Iniciar sesión";
+
+    button.addEventListener("click", () => {
+        window.location.href = "src/app.html";
+    });
 
     login.appendChild(h3);
     login.appendChild(user);
