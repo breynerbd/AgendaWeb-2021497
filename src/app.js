@@ -49,5 +49,19 @@ nav.appendChild(Button(
     }
 ));
 
+async function tareas() {
+    try {
+        let data = await fetch("https://jsonplaceholder.typicode.com/posts");
+        let r = await data.json();
+        console.log(r);
+    } catch (error) {
+        
+    }
+}
+
+tareas();
+
 container.innerHTML = "";
-container.appendChild(Contactos());
+container.appendChild(Contactos(container));
+
+console.log("Completado");

@@ -1,7 +1,7 @@
 import { ItemTarea } from "../../common/itemTarea/ItemTarea.js";
 import { getTasksFromStorage } from "../../common/storage.js";
 
-let Tareas = () => {
+let Tareas = (container) => {
     let sectionTareas = document.createElement("section");
     sectionTareas.className = "tareas";
 
@@ -12,10 +12,9 @@ let Tareas = () => {
     const tareas = getTasksFromStorage();
 
     tareas.forEach((task) => {
-        sectionTareas.appendChild(ItemTarea("check.svg", 
-            task.titulo, task.prioridad)
-        );
+        sectionTareas.appendChild(ItemTarea(task, container));
     });
+
 
     return sectionTareas;
 };

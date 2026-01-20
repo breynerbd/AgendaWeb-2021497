@@ -35,7 +35,9 @@ let NuevoContacto = () => {
 
     form.addEventListener("submit", (e) => {
         e.preventDefault();
+
         let contacto = {
+            id: Date.now(),
             nombre: inputNombre.value,
             telefono: inputTelefono.value
         };
@@ -50,7 +52,7 @@ let NuevoContacto = () => {
         inputTelefono.value = "";
 
         container.innerHTML = "";
-        container.appendChild(Contactos());
+        container.appendChild(Contactos(container));
     });
 
     return sectionNuevoContacto;

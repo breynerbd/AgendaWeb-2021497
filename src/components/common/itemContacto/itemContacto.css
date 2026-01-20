@@ -2,22 +2,63 @@
     background: var(--surface);
     border: 1px solid var(--border);
     border-radius: 0.75rem;
-    padding: 1rem 1.25rem;
-    width: 100%;
-    display: grid;
-    grid-template-columns: auto 1fr auto;
-    gap: 1rem;
+    padding: 1.25rem;
+    width: 80%;
+
+    display: flex;
+    flex-direction: column;
     align-items: center;
-    transition: all 0.2s ease;
+    gap: 0.5rem;
+
+    text-align: center;
+
+    transition: border-color 0.2s ease,
+        box-shadow 0.2s ease,
+        transform 0.2s ease;
 }
 
 .item-contacto:hover {
     border-color: var(--primary);
-    box-shadow: 0 2px 8px var(--shadow);
+    box-shadow: 0 4px 12px var(--shadow);
 }
 
-.item-contacto img {
-    height: 40px;
-    width: 40px;
-    opacity: 0.6;
+.foto-contacto {
+    width: 56px;  
+    height: 56px;
+    opacity: 0.8;
+    margin-bottom: 0.25rem;
+}
+
+.item-contacto p {
+    margin: 0;
+    font-size: 0.95rem;
+    color: var(--text);
+}
+
+.item-contacto p:first-of-type {
+    font-weight: 600;
+}
+
+.item-contacto p:last-of-type {
+    font-size: 0.85rem;
+    color: var(--text-muted);
+}
+
+.item-contacto-botones {
+    display: flex;
+    gap: 0.5rem;
+    justify-content: center;
+    margin-top: 0.5rem;
+}
+
+.icono-boton {
+    width: 26px;
+    height: 26px;
+    object-fit: contain;
+    cursor: pointer;
+    transition: transform 0.2s ease;
+}
+
+.icono-boton:hover {
+    opacity: 0.8;
 }

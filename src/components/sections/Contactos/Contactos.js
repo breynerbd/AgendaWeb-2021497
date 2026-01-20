@@ -1,21 +1,27 @@
 import { ItemContacto } from "../../common/itemContacto/ItemContacto.js";
 import { getContactsFromStorage } from "../../common/storage.js";
 
-let Contactos = () => {
+let Contactos = (container) => {
     let sectionContactos = document.createElement("section");
     sectionContactos.className = "contactos";
 
     let h2 = document.createElement("h2");
+    h2.className = "contactos-titulo";
     h2.textContent = "Contactos";
     sectionContactos.appendChild(h2);
 
+    let contactosGrid = document.createElement("div");
+    contactosGrid.className = "contactos-grid";
+
     const contactos = getContactsFromStorage();
 
-    contactos.forEach((contact) => {
-        sectionContactos.appendChild(ItemContacto("account.svg",
-            contact.nombre, contact.telefono));
+    contactos.forEach(contacto => {
+        contactosGrid.appendChild(ItemContacto(contacto, container));
     });
+
+    sectionContactos.appendChild(contactosGrid);
 
     return sectionContactos;
 };
+
 export { Contactos };

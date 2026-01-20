@@ -4,7 +4,6 @@
     gap: 1rem;
 }
 
-/* Botón */
 #nav > div {
     display: flex;
     align-items: center;
@@ -17,12 +16,10 @@
     transition: background-color 0.2s ease;
 }
 
-/* Hover */
 #nav > div:hover {
     background-color: #544b88;
 }
 
-/* Contenedor imagen */
 .button-image {
     width: 32px;
     height: 32px;
@@ -32,14 +29,12 @@
     justify-content: center;
 }
 
-/* Icono */
 .button-image img {
     width: 100%;
     height: 100%;
     object-fit: contain;
 }
 
-/* Texto */
 .button-text {
     font-size: 1rem;
     font-weight: 500;

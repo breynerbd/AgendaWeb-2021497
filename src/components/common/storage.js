@@ -17,9 +17,23 @@ function getTasksFromStorage() {
   return JSON.parse(localStorage.getItem(LOCAL_STORAGE_KEY_TASKS)) || [];
 }
 
+function deleteTaskById(id) {
+  const tareas = getTasksFromStorage();
+  const nuevasTareas = tareas.filter(tarea => tarea.id !== id);
+  saveTasksToStorage(nuevasTareas);
+}
+
+function deleteContactById(id) {
+  const contactos = getContactsFromStorage();
+  const nuevosContactos = contactos.filter(contacto => contacto.id !== id);
+  saveContactsToStorage(nuevosContactos);
+}
+
 export {
   getContactsFromStorage,
   saveContactsToStorage,
   getTasksFromStorage,
-  saveTasksToStorage
+  saveTasksToStorage,
+  deleteTaskById,
+  deleteContactById
 };

@@ -1,4 +1,4 @@
-.nueva-tarea {
+.editar-tarea {
     max-width: 480px;
     margin: 0 auto;
     background: var(--surface);
@@ -8,20 +8,22 @@
     box-shadow: 0 10px 30px var(--shadow);
 }
 
-.nueva-tarea h2 {
+.editar-tarea h2 {
     font-size: 1.5rem;
     font-weight: 600;
     margin-bottom: 1.5rem;
     color: var(--text);
 }
 
-.nueva-tarea form {
+.editar-tarea form {
     display: flex;
     flex-direction: column;
     gap: 1rem;
 }
 
-.nueva-tarea input {
+.editar-tarea input,
+.editar-tarea select,
+.editar-tarea input[type="date"] {
     padding: 0.75rem 0.9rem;
     border-radius: 8px;
     border: 1px solid var(--border);
@@ -32,17 +34,19 @@
     transition: all 0.2s ease;
 }
 
-.nueva-tarea input::placeholder {
+.editar-tarea input::placeholder {
     color: var(--text-secondary);
 }
 
-.nueva-tarea input:focus {
+.editar-tarea input:focus,
+.editar-tarea select:focus,
+.editar-tarea input[type="date"]:focus {
     border-color: var(--primary);
     box-shadow: 0 0 0 3px rgba(37, 99, 235, 0.15);
     background: var(--surface);
 }
 
-.nueva-tarea button {
+.editar-tarea button {
     margin-top: 0.5rem;
     padding: 0.75rem;
     border-radius: 8px;
@@ -55,23 +59,10 @@
     transition: background 0.2s ease, transform 0.1s ease;
 }
 
-.nueva-tarea button:hover {
+.editar-tarea button:hover {
     background: var(--primary-hover);
 }
 
-.nueva-tarea button:active {
+.editar-tarea button:active {
     transform: scale(0.98);
 }
-
-.nueva-tarea select,
-.nueva-tarea input[type="date"] {
-    padding: 0.75rem 0.9rem;
-    border-radius: 8px;
-    border: 1px solid var(--border);
-    font-size: 0.95rem;
-    background: var(--background);
-    color: var(--text);
-    outline: none;
-    transition: all 0.2s ease;
-}
-
