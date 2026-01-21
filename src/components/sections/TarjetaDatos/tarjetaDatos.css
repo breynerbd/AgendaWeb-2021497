@@ -1,0 +1,27 @@
+.contacto-overlay {
+    position: fixed;
+    inset: 0;
+    background: rgba(0,0,0,0.6);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 999;
+}
+
+.contacto-tarjeta {
+    background: #fff;
+    padding: 20px;
+    border-radius: 10px;
+    text-align: center;
+}
+
+.foto-grande {
+    width: 80px;
+    margin-bottom: 10px;
+}
+
+.btn-cerrar {
+    margin-top: 15px;
+    padding: 5px 10px;
+    cursor: pointer;
+}

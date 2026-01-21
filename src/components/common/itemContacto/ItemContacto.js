@@ -45,10 +45,8 @@ let ItemContacto = (contacto, container) => {
     });
 
     btnInfo.addEventListener("click", () => {
-        MostrarContacto(contacto);
+        container.appendChild(MostrarContacto(contacto, container));
     });
-
-
 
     botonesDiv.appendChild(btnEditar);
     botonesDiv.appendChild(btnEliminar);

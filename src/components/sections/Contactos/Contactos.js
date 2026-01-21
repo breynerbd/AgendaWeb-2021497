@@ -13,14 +13,19 @@ let Contactos = (container) => {
     let contactosGrid = document.createElement("div");
     contactosGrid.className = "contactos-grid";
 
-    const contactos = getContactsFromStorage();
+    const contactos = getContactsFromStorage() || [];
 
-    contactos.forEach(contacto => {
-        contactosGrid.appendChild(ItemContacto(contacto, container));
-    });
+    if (contactos.length === 0) {
+        const p = document.createElement("p");
+        p.textContent = "No hay contactos guardados";
+        contactosGrid.appendChild(p);
+    } else {
+        contactos.forEach(contacto => {
+            contactosGrid.appendChild(ItemContacto(contacto, container));
+        });
+    }
 
     sectionContactos.appendChild(contactosGrid);
-
     return sectionContactos;
 };
 

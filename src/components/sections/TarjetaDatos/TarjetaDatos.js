@@ -1,6 +1,10 @@
-let MostrarContacto = (contacto) => {
-    const overlay = document.createElement("div");
-    overlay.className = "contacto-overlay";
+import { Contactos } from "../Contactos/Contactos.js";
+
+let MostrarContacto = (contacto, container) => {
+    if (!contacto || !container) return;
+
+    const section = document.createElement("section");
+    section.className = "contacto-overlay";
 
     const tarjeta = document.createElement("div");
     tarjeta.className = "contacto-tarjeta";
@@ -10,21 +14,23 @@ let MostrarContacto = (contacto) => {
     fotoGrande.className = "foto-grande";
 
     const nombre = document.createElement("p");
-    nombre.textContent = `Nombre: ${contacto.nombre}`;
+    nombre.textContent = `Nombre: ${contacto.nombre || "N/A"}`;
 
     const telefono = document.createElement("p");
-    telefono.textContent = `Teléfono: ${contacto.telefono}`;
+    telefono.textContent = `Teléfono: ${contacto.telefono || "N/A"}`;
 
     const btnCerrar = document.createElement("button");
     btnCerrar.textContent = "Cerrar";
     btnCerrar.className = "btn-cerrar";
-    btnCerrar.addEventListener("click", () => overlay.remove());
+    btnCerrar.addEventListener("click", () => {
+        container.innerHTML = ""; 
+        container.appendChild(Contactos(container)); 
+    });
 
     tarjeta.append(fotoGrande, nombre, telefono, btnCerrar);
-    overlay.appendChild(tarjeta);
+    section.appendChild(tarjeta);
 
-    // Se agrega al body, no al container
-    document.body.appendChild(overlay);
+    return section;
 };
 
 export { MostrarContacto };
