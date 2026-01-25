@@ -4,10 +4,15 @@
     gap: 1rem;
 }
 
-.contactos-grid {
+.contactos-grid,
+.favoritos {
     display: grid;
     grid-template-columns: repeat(4, 1fr);
     gap: 0.5rem;
+}
+
+.contactos h3 {
+    margin-bottom: 0.5rem;
 }
 
 @media (max-width: 1200px) {
